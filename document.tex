@@ -12,6 +12,9 @@
 \makeindex
 
 \usepackage[toc,style=altlist,nopostdot]{glossaries}
+\newglossary*{term}{Cooking Terms}
+\newglossary*{tech}{Cooking Techniques}
+\newglossary*{eqpt}{Equipment}
 \makeglossaries
 \loadglsentries{glossarydefs}
 \glsaddall
@@ -76,7 +79,13 @@
 \chapter{Suggested Menus}
 \label{cha:suggested-menus}
 
+% Glossaries
+\printglossary[type=tech,nonumberlist]
+\printglossary[type=eqpt,nonumberlist]
+\printglossary[type=term,nonumberlist]
 \printglossary[nonumberlist]
+
+% Index
 \printindex
 
 \end{document}
