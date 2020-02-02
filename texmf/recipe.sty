@@ -14,8 +14,8 @@
 \newcommand\threequarters{\nicefrac{3}{4}}
 
 \newcommand\recipe@ingredient[2]{#1 & #2 \\}
-\newcommand\recipe@serving[1]{\ifempty{#1}{}{\textit{#1 servings}}}
-\newcommand\recipe@contributor[1]{\ifempty{#1}{}{Courtesy of #1}}
+\newcommand\recipe@serving[1]{\ifblank{#1}{}{\textit{#1 servings}}}
+\newcommand\recipe@contributor[1]{\ifblank{#1}{}{Courtesy of #1}}
 
 \newenvironment{recipe}[3]{%
   \bigskip%
