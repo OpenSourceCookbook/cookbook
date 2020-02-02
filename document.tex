@@ -1,0 +1,57 @@
+\documentclass[paper=a5,fontsize=11pt,parskip=half,twoside,DIV=16]{scrbook}
+
+\KOMAoptions{toc=flat}
+\KOMAoptions{toc=idx}
+
+\usepackage{helpers}
+\usepackage{recipe}
+
+\usepackage[type={CC},modifier={by-sa},version={4.0}]{doclicense}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage[toc,style=altlist,nopostdot]{glossaries}
+\makeglossaries
+\loadglsentries{glossarydefs}
+\glsaddall
+
+\title{The Open Source Cookbook}
+
+\lowertitleback{This compilation \copyright 2020, Samuel Flint,
+  licensed \doclicenseName (\doclicenseIcon).  Recipes copyright their
+  respective contributors, and under the same terms unless otherwise
+  noted.}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={The Open Source Cookbook},
+  pdfcreator={LatexMk},
+  pdflang={en-US},
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  filecolor=black,
+  urlcolor=black
+}
+
+\begin{document}
+
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\backmatter
+\printglossary[nonumberlist]
+\printindex
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
