@@ -103,9 +103,9 @@ acs-*.bib
 # glossaries
 *.acn
 *.acr
-*.glg
-*.glo
-*.gls
+*glg
+*glo
+*gls
 *.glsdefs
 
 # hyperref
