@@ -1,0 +1,51 @@
+\ProvidesPackage{helpers}[2019/11/15 Common/Personal Utility
+Commands]
+
+\RequirePackage{ifdraft}
+\RequirePackage{setspace}
+\RequirePackage{ifmtarg}
+
+\newcommand\mycommon@font{\textit}
+\newcommand\foreign[1]{\mycommon@font{#1}}
+
+\ProcessOptions\relax
+
+\ifdraft{\RequirePackage{background}\backgroundsetup{contents={DRAFT}}}
+\ifdraft{\RequirePackage[color]{showkeys}}
+\ifdraft{\RequirePackage{setspace}\AtBeginDocument{\doublespace}}
+
+
+\newcommand\@ensurecomma{\@ifnextchar,{}{\PackageWarning{helpers}{
+      You appear to have forgotten a necessary comma}}}
+
+\newcommand\@ensuresingleperiod{\@ifnextchar.{}{.\@\PackageWarning{helpers}{
+      You appear to have forgotten a necessary period}}}
+
+\newcommand\commaabbrev[2]{\newcommand#1{\mycommon@font{#2}\@ensurecomma}}
+\newcommand\spaceabbrev[2]{\newcommand#1{\mycommon@font{#2}\ }}
+\newcommand\periodabbrev[2]{\newcommand#1{\mycommon@font{#2}\@ensuresingleperiod}}
+
+\commaabbrev{\eg}{e.g.}
+\commaabbrev{\Eg}{E.g.}
+\commaabbrev{\ie}{i.e.}
+\commaabbrev{\Ie}{I.e.}
+\commaabbrev{\viz}{viz.}
+\commaabbrev{\Viz}{Viz.}
+\commaabbrev{\ibid}{ibid.}
+\commaabbrev{\Ibid}{Ibid.}
+\commaabbrev{\ia}{i.a.}
+\commaabbrev{\Ia}{I.a.}
+
+\spaceabbrev{\cf}{cf.}
+\spaceabbrev{\Cf}{Cf.}
+
+
+\periodabbrev{\etal}{et al}
+\periodabbrev{\Etal}{Et al}
+\periodabbrev{\etc}{\&c}
+\periodabbrev{\Etc}{\&c}
+\periodabbrev{\etseq}{et seq}
+\periodabbrev{\Etseq}{Et seq}
+\periodabbrev{\Sic}{Sic}
+
+\endinput
