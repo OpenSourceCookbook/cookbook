@@ -1,12 +1,16 @@
 { nixpkgs ? import <nixpkgs>{} }:
 
-nixpkgs.stdenv.mkDerivation rec {
+with nixpkgs;
+
+stdenv.mkDerivation rec {
   name = "cookbook";
   src =  ./.;
-  buildInputs = [ nixpkgs.texlive.combined.scheme-full ];
-  buildPhase = ./builder.sh;
-  installPhase = ''
-  mkdir $out
-  cp document.pdf $out/
-'';
+  buildInputs = [ texlive.combined.scheme-full ];
+
+  buildPhase = "make";
+  
+  # installPhase = ''
+#   mkdir $out
+#   cp document.pdf $out/
+# '';
 }
