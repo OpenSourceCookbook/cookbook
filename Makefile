@@ -7,7 +7,7 @@ export TEXINPUTS := ./texmf/:$(TEXINPUTS)
 all: $(DOCNAME).pdf
 
 $(DOCNAME).pdf: $(DOCNAME).tex
-	latexmk -pdflua $(DOCNAME)
+	latexmk -pdf $(DOCNAME)
 
 clean:
 	latexmk -CA
