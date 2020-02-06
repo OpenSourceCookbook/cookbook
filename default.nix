@@ -9,20 +9,30 @@ stdenv.mkDerivation rec {
     git
     (texlive.combine {
       inherit (texlive)
+        # Basic Packages
         scheme-small
+
+        # Specifically used
         latexmk
-        ifmtarg
         booktabs
         units
         changepage
         hyperxmp
         doclicense
+        glossaries
+
+
+        # Un-handled dependencies
+        ifmtarg
         xifthen
+        xfor
+        substr
         etoolbox
         mfirstuc
         datatool
-        glossaries
         textcase
+        csquotes
+        ccicons
       ;
     })
   ];
