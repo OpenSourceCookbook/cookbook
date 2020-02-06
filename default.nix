@@ -5,7 +5,27 @@ with nixpkgs;
 stdenv.mkDerivation rec {
   name = "cookbook";
   src =  ./.;
-  buildInputs = [ texlive.combined.scheme-full ];
+  buildInputs = [
+    git
+    (texlive.combine {
+      inherit (texlive)
+        scheme-small
+        latexmk
+        ifmtarg
+        booktabs
+        units
+        changepage
+        hyperxmp
+        doclicense
+        xifthen
+        etoolbox
+        mfirstuc
+        datatool
+        glossaries
+        textcase
+      ;
+    })
+  ];
 
   buildPhase = "make";
 
