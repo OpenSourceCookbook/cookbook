@@ -8,9 +8,10 @@ stdenv.mkDerivation rec {
   buildInputs = [ texlive.combined.scheme-full ];
 
   buildPhase = "make";
-  
-  # installPhase = ''
-#   mkdir $out
-#   cp document.pdf $out/
-# '';
+
+  meta = with lib; {
+    description = "Open Source Cookbook";
+    license = licenses.cc-by-sa-40;
+    author = "Samuel Flint <swflint@flintfam.org>";
+  };
 }
