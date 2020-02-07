@@ -1,40 +1,44 @@
-{ nixpkgs ? import <nixpkgs>{} }:
+{ nixpkgs ? import <nixpkgs> {} }:
 
 with nixpkgs;
 
 stdenv.mkDerivation rec {
   name = "open-cookbook";
-  src =  ./.;
+
+  src = ./.;
+
   buildInputs = [
     git
-    (texlive.combine {
-      inherit (texlive)
-        # Basic Packages
-        scheme-small
+    (
+      texlive.combine {
+        inherit (texlive)
+          # Basic Packages
+          scheme-small
 
-        # Specifically used
-        latexmk
-        booktabs
-        units
-        changepage
-        hyperxmp
-        doclicense
-        glossaries
+          # Specifically used
+          latexmk
+          booktabs
+          units
+          changepage
+          hyperxmp
+          doclicense
+          glossaries
 
 
-        # Un-handled dependencies
-        ifmtarg
-        xifthen
-        xfor
-        substr
-        etoolbox
-        mfirstuc
-        datatool
-        textcase
-        csquotes
-        ccicons
-      ;
-    })
+          # Un-handled dependencies
+          ifmtarg
+          xifthen
+          xfor
+          substr
+          etoolbox
+          mfirstuc
+          datatool
+          textcase
+          csquotes
+          ccicons
+          ;
+      }
+    )
   ];
 
   buildPhase = "make";
