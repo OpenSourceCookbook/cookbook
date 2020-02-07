@@ -3,7 +3,7 @@
 with nixpkgs;
 
 stdenv.mkDerivation rec {
-  name = "cookbook";
+  name = "open-cookbook";
   src =  ./.;
   buildInputs = [
     git
