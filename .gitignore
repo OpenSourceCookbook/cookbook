@@ -4,7 +4,7 @@
 !.gitmodules
 !.gitkeep
 !.latexmkrc
-!.travis-ci.yml
+!.travis.yml
 
 result
 
