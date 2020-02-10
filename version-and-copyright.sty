@@ -1,0 +1,14 @@
+\ProvidesPackage{version-and-copyright}[2020/02/02 Handle Version and Copyright]
+
+\RequirePackage{verbatim}
+\RequirePackage{shellesc}
+\RequirePackage{etoolbox}
+
+\ProcessOptions\relax
+
+\newcommand\vc@getRev{\ShellEscape{git rev-parse --short HEAD > \jobname.ver}}
+\newcommand\gitrevision{\vc@getRev\input{\jobname.ver}}
+
+\newcommand\copyrightRange[1]{\copyright~#1\ifnumgreater{\year}{#1}{--\the\year}{}}
+
+\endinput

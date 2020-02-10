@@ -14,14 +14,17 @@
 \newcommand\threequarters{\nicefrac{3}{4}}
 
 \newcommand\recipe@ingredient[2]{#1 & #2 \\}
-\newcommand\recipe@serving[1]{\ifempty{#1}{}{\textit{#1 servings}}}
-\newcommand\recipe@contributor[1]{\ifempty{#1}{}{Courtesy of #1}}
+\newcommand\recipe@serving[1]{\ifblank{#1}{}{\textit{#1 servings}}}
+\newcommand\recipe@contributor[1]{\ifblank{#1}{}{Courtesy of #1}}
+\newcommand\recipe@majorstep[1]{\par\smallskip\textbf{#1}\par}
 
-\newenvironment{recipe}[1]{%
+\newenvironment{recipe}[3]{%
   \bigskip%
   \begin{adjustwidth}{4em}{4em}%
+    \let\majorstep=\recipe@majorstep
     \centerline{\textbf{#1}}%
-    \recipe@contributor{#2}\hfill\recipe@servings{#3}\\
+    \recipe@contributor{#2}\hfill\recipe@serving{#3}\\
+    \smallskip%
     \newenvironment{note}{\textit{Note:}}{}
     \newenvironment{ingredients}{%
       \smallskip%
@@ -35,7 +38,6 @@
       \end{center}%
       \smallskip%
     }%
-    \smallskip
   }{%
   \end{adjustwidth}%
   \bigskip%
