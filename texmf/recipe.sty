@@ -6,12 +6,13 @@
 \RequirePackage{nicefrac}
 \RequirePackage{booktabs}
 \RequirePackage{changepage}
+\RequirePackage{xspace}
 
-\newcommand\half{\nicefrac{1}{2}}
-\newcommand\quarter{\nicefrac{1}{4}}
-\newcommand\third{\nicefrac{1}{3}}
-\newcommand\twothirds{\nicefrac{2}{3}}
-\newcommand\threequarters{\nicefrac{3}{4}}
+\newcommand\half{\nicefrac{1}{2}\xspace}
+\newcommand\quarter{\nicefrac{1}{4}\xspace}
+\newcommand\third{\nicefrac{1}{3}\xspace}
+\newcommand\twothirds{\nicefrac{2}{3}\xspace}
+\newcommand\threequarters{\nicefrac{3}{4}\xspace}
 
 \newcommand\recipe@ingredient[2]{#1 & #2 \\}
 \newcommand\recipe@serving[1]{\ifblank{#1}{}{\textit{#1 servings}}}

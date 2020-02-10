@@ -24,7 +24,6 @@ stdenv.mkDerivation rec {
           doclicense
           glossaries
 
-
           # Un-handled dependencies
           ifmtarg
           xifthen
