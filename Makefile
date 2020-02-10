@@ -9,6 +9,9 @@ all: $(DOCNAME).pdf
 $(DOCNAME).pdf: $(DOCNAME).tex
 	latexmk -pdf $(DOCNAME)
 
+continuous:
+	latexmk -pdf -pvc -interaction=nonstopmode $(DOCNAME)
+
 clean:
 	latexmk -CA
 
