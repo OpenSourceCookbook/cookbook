@@ -7,7 +7,12 @@
 \ProcessOptions\relax
 
 \newcommand\vc@getRev{\ShellEscape{git rev-parse --short HEAD > \jobname.ver}}
-\newcommand\gitrevision{\vc@getRev\input{\jobname.ver}}
+\newcommand\gitrevision{%
+  \vc@getRev%
+  \edef\RestoreEndlinechar{\endlinechar=\the\endlinechar\relax}%
+  \endlinechar=-1%
+  \input{\jobname.ver}%
+  \RestoreEndlinechar}
 
 \newcommand\copyrightRange[1]{\copyright~#1\ifnumgreater{\year}{#1}{--\the\year}{}}
 
