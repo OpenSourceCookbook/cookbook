@@ -16,5 +16,5 @@ clean:
 	latexmk -CA
 
 install:
-	mkdir -pv ${out}/nix-support/
-	cp $(DOCNAME).pdf ${out}/
+	# mkdir -pv ${out}/nix-support/
+	cp $(DOCNAME).pdf ${out}
